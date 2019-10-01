@@ -1,1 +1,11 @@
 customer_newのページ
+<%= link_to "ホームへ", root_path, class: 'get' %>
+
+<%= form_tag('/companies', method: :post) do %>
+<h3>
+  得意先登録画面
+</h3>
+<input type="text" name="company_name" placeholder="会社名を入力してください。">
+<input type="text" name="company_kana" placeholder="ｶﾅを入力してください。(半角)">
+<input type="submit" value="SENT">
+<% end %>
