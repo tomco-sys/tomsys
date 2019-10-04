@@ -1,0 +1,6 @@
+companies controller edit view
+
+<% @companys.each do |comp| %>
+<%= simple_format(comp.company_name) %>
+<%= simple_format(comp.company_kana) %>
+<% end %>

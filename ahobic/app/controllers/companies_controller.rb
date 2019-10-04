@@ -8,6 +8,10 @@ class CompaniesController < ApplicationController
     @companys = Company.all
   end
 
+  def edit
+    @companys = Company.all
+  end
+
   private
 
   def com_params
