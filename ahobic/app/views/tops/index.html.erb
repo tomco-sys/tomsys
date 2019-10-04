@@ -2,6 +2,13 @@ topｺﾝﾄﾛｰﾗｰ indexのview
 
 <h1>SUB TOMSYS</h1>
 
+<% if user_signed_in? %>
+<%= @user %>でﾛｸﾞｲﾝ中
+<%= link_to "ログアウト",  destroy_user_session_path, method: 'delete' %>
+<% end %>
+
+
+
 <ul>
   <li>
     <%= link_to "取引先登録", companies_path, class: 'get' %>
