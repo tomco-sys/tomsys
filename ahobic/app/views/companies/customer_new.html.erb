@@ -60,238 +60,235 @@ customer_newのページ
      </div>
 
 
+    <form　class="inline-box">
+          <div class="form-group">
+              <label>得意先正式名</label>
+              <input type="text" name="company_name" id="txt3" class="form-control" placeholder="富永物産株式会社">
+          </div>
 
-    <div>
-        <form　class="inline-box">
-              <div class="form-group">
-                  <label>得意先正式名</label>
-                  <input type="text" name="company_name" id="txt3" class="form-control" placeholder="富永物産株式会社">
-              </div>
+          <div class="form-group">
+              <label>得意先略名</label>
+              <input type="text" class="form-control" placeholder="富永物産（株）">
+          </div>
 
-              <div class="form-group">
-                  <label>得意先略名</label>
-                  <input type="text" class="form-control" placeholder="富永物産（株）">
-              </div>
+          <div class="form-group">
+              <label>得意先ｶﾅ名</label>
+              <input name="company_kana" type="text" class="form-control" placeholder="ﾄﾐﾅｶﾞﾌﾞｯｻﾝ">
+          </div>
 
-              <div class="form-group">
-                  <label>得意先ｶﾅ名</label>
-                  <input name="company_kana" type="text" class="form-control" placeholder="ﾄﾐﾅｶﾞﾌﾞｯｻﾝ">
-              </div>
-
-              <div class="row">
-                <div class="form-group">
-                  <div class="col-md-2">
-                    <label>郵便番号(ﾊｲﾌﾝなし)</label>
-                      <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="5300047">
-                    </div>
+          <div class="row">
+            <div class="form-group">
+              <div class="col-md-2">
+                <label>郵便番号(ﾊｲﾌﾝなし)</label>
+                  <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="5300047">
                 </div>
-              </div>
-              <br>
-              <div class="form-group">
-                  <label>住所</label>
-                  <input type="text" name="addr11" class="form-control" placeholder="大阪府大阪市北区西天満">
-                  <input type="text" name="addr11" class="form-control" placeholder="番地(2丁目6-8)">
-                  <input type="text" name="addr11" class="form-control" placeholder="建物名など(堂島ビルヂング)">
-              </div>
-              <div class="row">
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+              <label>住所</label>
+              <input type="text" name="addr11" class="form-control" placeholder="大阪府大阪市北区西天満">
+              <input type="text" name="addr11" class="form-control" placeholder="番地(2丁目6-8)">
+              <input type="text" name="addr11" class="form-control" placeholder="建物名など(堂島ビルヂング)">
+          </div>
+          <div class="row">
+            <div class="form-group">
+                <span class="col-md-6">
+                  <label>電話番号</label>
+                  <input type="text" name="tel" class="form-control" placeholder="06-6361-3836">
+                </span>
+                <span class="col-md-6">
+                  <label>FAX</label>
+                  <input type="text" name="fax" class="form-control" placeholder="06-6365-6294">
+                </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+                <span class="col-md-6">
+                  <br>
+                  <label>資本金</label>
+                  <input type="text" name="capital" onfocus="offComma(this);" onblur="toComma(this);" class="form-control" placeholder="1200000000">
+                </span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+              <span class="col-md-6">
                 <div class="form-group">
-                    <span class="col-md-6">
-                      <label>電話番号</label>
-                      <input type="text" name="tel" class="form-control" placeholder="06-6361-3836">
-                    </span>
-                    <span class="col-md-6">
-                      <label>FAX</label>
-                      <input type="text" name="fax" class="form-control" placeholder="06-6365-6294">
-                    </span>
+                  <label for="busyo">担当部署</label>
+                  <input type="text" name="tel" id="busyo" class="form-control" placeholder="総務経理本部">
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                    <span class="col-md-6">
-                      <br>
-                      <label>資本金</label>
-                      <input type="text" name="capital" onfocus="offComma(this);" onblur="toComma(this);" class="form-control" placeholder="1200000000">
-                    </span>
-                </div>
-              </div>
-              <br>
-              <br>
-              <div class="row">
-                  <span class="col-md-6">
-                    <div class="form-group">
-                      <label for="busyo">担当部署</label>
-                      <input type="text" name="tel" id="busyo" class="form-control" placeholder="総務経理本部">
-                    </div>
-                  </span>
-                  <span class="col-md-6">
-                    <label for="yaku">担当役職</label>
-                    <input type="text" name="yaku" id="yaku" class="form-control" placeholder="部長">
-                  </span>
-              </div>
+              </span>
+              <span class="col-md-6">
+                <label for="yaku">担当役職</label>
+                <input type="text" name="yaku" id="yaku" class="form-control" placeholder="部長">
+              </span>
+          </div>
 
-              <div class="row">
-                <div class="form-group">
-                    <span class="col-md-6">
-                      <label for="chargeperson">担当者</label>
-                      <input type="text" name="chargeperson" id="chargeperson" class="form-control" placeholder="富永 太郎">
-                    </span>
-                    <span class="col-md-6">
-                      <label for="mailad">メールアドレス</label>
-                      <input type="text" name="mailad" id="mailad" class="form-control" placeholder="tominaga@mail.tomco.co.jp">
-                    </span>
-                </div>
-              </div>
-        </form>
+          <div class="row">
+            <div class="form-group">
+                <span class="col-md-6">
+                  <label for="chargeperson">担当者</label>
+                  <input type="text" name="chargeperson" id="chargeperson" class="form-control" placeholder="富永 太郎">
+                </span>
+                <span class="col-md-6">
+                  <label for="mailad">メールアドレス</label>
+                  <input type="text" name="mailad" id="mailad" class="form-control" placeholder="tominaga@mail.tomco.co.jp">
+                </span>
+            </div>
+          </div>
+    </form>
 
-        <br>
-        <br>
+    <br>
+    <br>
 
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">通貨</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>JPY</option>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>その他</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+      <div class="form-group">
+        <label for="shimebi">締日</label>
+        <select class="form-control" id="shimebi">
+          <option>05</option>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+          <option selected>末</option>
+        </select>
+      </div>
+      </div>
+
+      <div class="col-md-2">
         <div class="form-group">
-          <label for="exampleFormControlSelect1">通貨</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>JPY</option>
-            <option>USD</option>
-            <option>EUR</option>
-            <option>その他</option>
+          <label for="kaisyuzuki">回収月</label>
+          <select class="form-control" id="kaisyuzuki">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
           </select>
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-2">
-          <div class="form-group">
-            <label for="shimebi">締日</label>
-            <select class="form-control" id="shimebi">
-              <option>05</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option selected>末</option>
-            </select>
-          </div>
-          </div>
+      <div class="col-md-2">
+      <div class="form-group">
+          <label for="kaisyubi">回収日</label>
+          <select class="form-control" id="kaisyuzubi">
+            <%= for num in 1..30 do %>
+            <option><%= num %></option>
+            <% end %>
+            <option selected>31</option>
+          </select>
+      </div>
+      </div>
+    </div>
 
-          <div class="col-md-2">
-            <div class="form-group">
-              <label for="kaisyuzuki">回収月</label>
-              <select class="form-control" id="kaisyuzuki">
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-                <option>05</option>
-              </select>
-            </div>
-          </div>
+    <div class="row">
+      <div class="col-md-2">
+      <div class="form-group">
+        <label for="kaisyuzyouken">回収条件</label>
+        <select class="form-control" id="kaisyuzyouken">
+          <option>全額</option>
+          <option>7万円以上</option>
+          <option>8万円以上</option>
+          <option>10万円以上</option>
+          <option>15万円以上</option>
+          <option>20万円以上</option>
+          <option>30万円以上</option>
+          <option>35万円以上</option>
+        </select>
+      </div>
+      </div>
 
-          <div class="col-md-2">
-          <div class="form-group">
-              <label for="kaisyubi">回収日</label>
-              <select class="form-control" id="kaisyuzubi">
-                <%= for num in 1..30 do %>
-                <option><%= num %></option>
-                <% end %>
-                <option selected>31</option>
-              </select>
-          </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2">
-          <div class="form-group">
-            <label for="kaisyuzyouken">回収条件</label>
-            <select class="form-control" id="kaisyuzyouken">
-              <option>全額</option>
-              <option>7万円以上</option>
-              <option>8万円以上</option>
-              <option>10万円以上</option>
-              <option>15万円以上</option>
-              <option>20万円以上</option>
-              <option>30万円以上</option>
-              <option>35万円以上</option>
-            </select>
-          </div>
-          </div>
-
-          <div class="col-md-2">
-            <div class="form-group">
-              <label for="kaisyuhouhou">回収方法</label>
-              <select class="form-control" id="kaisyuhouhou">
-                <option onclick="changeDisabled();">現金</option>
-                <option onclick="changeAbled();">手形</option>
-                <option onclick="changeAbled();">ﾌｧｸﾀﾘﾝｸﾞ</option>
-              </select>
-            </div>
-          </div>
-
-
-          <div class="col-md-2">
-          <div class="form-group">
-              <label for="nissuu">手形(ﾌｧｸﾀﾘﾝｸﾞ)日数</label>
-              <input type="text" id="txt1" name="nissuu" class="form-control" placeholder="120" disabled>
-          </div>
-          </div>
-        </div>
-
-
+      <div class="col-md-2">
         <div class="form-group">
-          <label>備考欄</label>
-          <input type="text" name="bikou" class="form-control" placeholder="特記事項があれば、記載してください。">
+          <label for="kaisyuhouhou">回収方法</label>
+          <select class="form-control" id="kaisyuhouhou">
+            <option onclick="changeDisabled();">現金</option>
+            <option onclick="changeAbled();">手形</option>
+            <option onclick="changeAbled();">ﾌｧｸﾀﾘﾝｸﾞ</option>
+          </select>
         </div>
       </div>
 
 
-<!-- ここから下はcollapse -->
-<div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <div class="text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        ※本社情報が上記と異なる場合はこちらも入力してください。
-        </div>
-      </h5>
+      <div class="col-md-2">
+      <div class="form-group">
+          <label for="nissuu">手形(ﾌｧｸﾀﾘﾝｸﾞ)日数</label>
+          <input type="text" id="txt1" name="nissuu" class="form-control" placeholder="120" disabled>
+      </div>
+      </div>
     </div>
 
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-        <div>
-          <form　class="inline-box">
-            <div class="row">
-              <div class="form-group">
-                <div class="col-md-3">
-                <label>本社郵便番号(ﾊｲﾌﾝなし)</label>
-                <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr12','addr12');" placeholder="1030023">
+
+    <div class="form-group">
+      <label>備考欄</label>
+      <input type="text" name="bikou" class="form-control" placeholder="特記事項があれば、記載してください。">
+    </div>
+
+
+    <!-- ここから下はcollapse -->
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <div class="text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            ※本社情報が上記と異なる場合はこちらも入力してください。
+            </div>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div>
+              <form　class="inline-box">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-md-3">
+                    <label>本社郵便番号(ﾊｲﾌﾝなし)</label>
+                    <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr12','addr12');" placeholder="1030023">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          <br>
-          <div class="form-group">
-            <label>本社住所</label>
-            <input type="text" name="addr12" class="form-control" placeholder="東京都中央区日本橋本町">
-            <input type="text" name="addr12" class="form-control" placeholder="番地(3丁目6-2)">
-            <input type="text" name="addr12" class="form-control" placeholder="建物名など(小津ビルディング)">
-          </div>
-            <div class="row">
+              <br>
               <div class="form-group">
-                <span class="col-md-6">
-                  <label>本社電話番号</label>
-                  <input type="text" name="tel" class="form-control" placeholder="03-3639-5311">
-                </span>
-                <span class="col-md-6">
-                  <label>本社FAX</label>
-                  <input type="text" name="fax" class="form-control" placeholder="03-3639-5360">
-                </span>
+                <label>本社住所</label>
+                <input type="text" name="addr12" class="form-control" placeholder="東京都中央区日本橋本町">
+                <input type="text" name="addr12" class="form-control" placeholder="番地(3丁目6-2)">
+                <input type="text" name="addr12" class="form-control" placeholder="建物名など(小津ビルディング)">
               </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="col-md-6">
+                      <label>本社電話番号</label>
+                      <input type="text" name="tel" class="form-control" placeholder="03-3639-5311">
+                    </span>
+                    <span class="col-md-6">
+                      <label>本社FAX</label>
+                      <input type="text" name="fax" class="form-control" placeholder="03-3639-5360">
+                    </span>
+                  </div>
+                </div>
+              <br>
+              </form>
             </div>
-          <br>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 
-<input type="submit" value="sent">
+<button type="button" class="btn-primary btn-lg" onclick="submit();" >送信</button>
 <% end %>
