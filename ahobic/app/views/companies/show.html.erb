@@ -1,0 +1,16 @@
+shows view
+<div>
+<input class="btn btn-outline-primary" type="button" value="印刷する" onclick="window.print();" />
+</div>
+
+<h3>得意先マスタ新規登録申請書</h3>
+
+得意先正式名：
+<div>
+<%= @companys.company_name %>
+</div>
+
+得意先ｶﾅ名：
+<div>
+<%= @companys.company_kana %>
+</div>
