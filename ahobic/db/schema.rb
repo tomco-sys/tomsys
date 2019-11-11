@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_080459) do
+ActiveRecord::Schema.define(version: 2019_10_29_025718) do
 
   create_table "companies", force: :cascade do |t|
     t.text "company_name"
@@ -18,6 +18,35 @@ ActiveRecord::Schema.define(version: 2019_10_23_080459) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "approval"
+    t.integer "status"
+    t.integer "dometic"
+    t.string "registnum"
+    t.string "abb_name"
+    t.string "zip12"
+    t.text "address1"
+    t.text "address2"
+    t.text "address3"
+    t.string "tel1"
+    t.string "fax1"
+    t.string "capital"
+    t.string "c_department"
+    t.string "c_position"
+    t.string "person_in_c"
+    t.string "c_mail"
+    t.integer "currency"
+    t.string "period_day"
+    t.string "collect_month"
+    t.string "collect_day"
+    t.string "collect_condition"
+    t.string "collect_way"
+    t.string "pay_term"
+    t.text "remarks"
+    t.string "h_zip"
+    t.string "h_adress1"
+    t.string "h_adress2"
+    t.string "h_adress3"
+    t.string "h_tel"
+    t.string "h_fax"
   end
 
   create_table "users", force: :cascade do |t|

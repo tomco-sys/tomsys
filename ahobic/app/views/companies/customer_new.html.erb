@@ -27,12 +27,12 @@ customer_newのページ
             <label>登録状況：新規取引先　or　他部門での取引あり</label>
             <br>
             <div class="form-check form-check-inline">
-                <input onclick="changeDisabled2();changeAbled3();Removevalue();" class="form-check-input" type="radio" name="status" checked>
+                <input onclick="changeDisabled2();changeAbled3();" class="form-check-input" type="radio" name="status" value="0" checked>
                 <label class="form-check-label" for="inlineRadio1">新規</label>
             </div>
             <!-- onclickとかは"イベント属性"っていうねんて -->
             <div class="form-check form-check-inline">
-                <input  onclick="changeAbled2();" class="form-check-input" type="radio" name="status">
+                <input  onclick="changeAbled2();" class="form-check-input" type="radio" name="status" value="1">
                 <label class="form-check-label" for="inlineRadio2">他部門登録あり</label>
             </div>
         </div>
@@ -41,7 +41,7 @@ customer_newのページ
       <div class="col-md-2">
         <div class="form-group">
           <label for="registered">他部門登録番号</label>
-          <input oninput="changeDisabled3();" id="txt2" type="text" class="form-control" placeholder="321123450S" disabled>
+          <input oninput="changeDisabled3();" name="registnum" id="txt2" type="text" class="form-control" placeholder="321123450S" disabled>
         </div>
       </div>
     </div>
@@ -50,11 +50,11 @@ customer_newのページ
         <label>国内外区分：　国内取引先　or　海外取引先</label>
         <br>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="dometic" checked>
+            <input class="form-check-input" type="radio" name="dometic" value=0 checked>
             <label class="form-check-label" for="inlineRadio1">国内</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="dometic">
+            <input class="form-check-input" type="radio" value=1 name="dometic">
             <label class="form-check-label" for="inlineRadio2">国外</label>
         </div>
      </div>
@@ -68,7 +68,7 @@ customer_newのページ
 
           <div class="form-group">
               <label>得意先略名</label>
-              <input type="text" class="form-control" placeholder="富永物産（株）">
+              <input name="abb_name" type="text" class="form-control" placeholder="富永物産（株）">
           </div>
 
           <div class="form-group">
@@ -80,26 +80,26 @@ customer_newのページ
             <div class="form-group">
               <div class="col-md-2">
                 <label>郵便番号(ﾊｲﾌﾝなし)</label>
-                  <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="5300047">
-                </div>
+                  <input type="text" name="zip12" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','address1','address1');" placeholder="5300047">
+              </div>
             </div>
           </div>
           <br>
           <div class="form-group">
               <label>住所</label>
-              <input type="text" name="addr11" class="form-control" placeholder="大阪府大阪市北区西天満">
-              <input type="text" name="addr11" class="form-control" placeholder="番地(2丁目6-8)">
-              <input type="text" name="addr11" class="form-control" placeholder="建物名など(堂島ビルヂング)">
+              <input type="text" name="address1" class="form-control" placeholder="大阪府大阪市北区西天満">
+              <input type="text" name="address2" class="form-control" placeholder="番地(2丁目6-8)">
+              <input type="text" name="address3" class="form-control" placeholder="建物名など(堂島ビルヂング)">
           </div>
           <div class="row">
             <div class="form-group">
                 <span class="col-md-6">
                   <label>電話番号</label>
-                  <input type="text" name="tel" class="form-control" placeholder="06-6361-3836">
+                  <input type="text" name="tel1" class="form-control" placeholder="06-6361-3836">
                 </span>
                 <span class="col-md-6">
                   <label>FAX</label>
-                  <input type="text" name="fax" class="form-control" placeholder="06-6365-6294">
+                  <input type="text" name="fax1" class="form-control" placeholder="06-6365-6294">
                 </span>
             </div>
           </div>
@@ -118,12 +118,12 @@ customer_newのページ
               <span class="col-md-6">
                 <div class="form-group">
                   <label for="busyo">担当部署</label>
-                  <input type="text" name="tel" id="busyo" class="form-control" placeholder="総務経理本部">
+                  <input type="text" name="c_department" id="busyo" class="form-control" placeholder="総務経理本部">
                 </div>
               </span>
               <span class="col-md-6">
                 <label for="yaku">担当役職</label>
-                <input type="text" name="yaku" id="yaku" class="form-control" placeholder="部長">
+                <input type="text" name="c_position" id="yaku" class="form-control" placeholder="部長">
               </span>
           </div>
 
@@ -131,11 +131,11 @@ customer_newのページ
             <div class="form-group">
                 <span class="col-md-6">
                   <label for="chargeperson">担当者</label>
-                  <input type="text" name="chargeperson" id="chargeperson" class="form-control" placeholder="富永 太郎">
+                  <input type="text" name="person_in_c" id="chargeperson" class="form-control" placeholder="富永 太郎">
                 </span>
                 <span class="col-md-6">
                   <label for="mailad">メールアドレス</label>
-                  <input type="text" name="mailad" id="mailad" class="form-control" placeholder="tominaga@mail.tomco.co.jp">
+                  <input type="text" name="c_mail" id="mailad" class="form-control" placeholder="tominaga@mail.tomco.co.jp">
                 </span>
             </div>
           </div>
@@ -146,10 +146,10 @@ customer_newのページ
 
     <div class="form-group">
       <label for="exampleFormControlSelect1">通貨</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>JPY</option>
-        <option>USD</option>
-        <option>EUR</option>
+      <select name="currency" class="form-control" id="exampleFormControlSelect1">
+        <option value="1">JPY</option>
+        <option value="2">USD</option>
+        <option value="3">EUR</option>
         <option>その他</option>
       </select>
     </div>
@@ -157,39 +157,39 @@ customer_newのページ
     <div class="row">
       <div class="col-md-2">
       <div class="form-group">
-        <label for="shimebi">締日</label>
-        <select class="form-control" id="shimebi">
-          <option>05</option>
-          <option>10</option>
-          <option>15</option>
-          <option>20</option>
-          <option>25</option>
-          <option selected>末</option>
+        <label for="period_day">締日</label>
+        <select name="period_day" class="form-control" id="period_day">
+          <option value="5">05</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="31" selected>末</option>
         </select>
       </div>
       </div>
 
       <div class="col-md-2">
         <div class="form-group">
-          <label for="kaisyuzuki">回収月</label>
-          <select class="form-control" id="kaisyuzuki">
-            <option>01</option>
-            <option>02</option>
-            <option>03</option>
-            <option>04</option>
-            <option>05</option>
+          <label for="collect_month">回収月</label>
+          <select name="collect_month" class="form-control" id="collect_month">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
           </select>
         </div>
       </div>
 
       <div class="col-md-2">
       <div class="form-group">
-          <label for="kaisyubi">回収日</label>
-          <select class="form-control" id="kaisyuzubi">
+          <label for="collect_day">回収日</label>
+          <select name="collect_day" class="form-control" id="collect_day">
             <%= for num in 1..30 do %>
-            <option><%= num %></option>
+            <option value="<%= num %>"><%= num %></option>
             <% end %>
-            <option selected>31</option>
+            <option  value="31" selected>31</option>
           </select>
       </div>
       </div>
@@ -198,27 +198,27 @@ customer_newのページ
     <div class="row">
       <div class="col-md-2">
       <div class="form-group">
-        <label for="kaisyuzyouken">回収条件</label>
-        <select class="form-control" id="kaisyuzyouken">
-          <option>全額</option>
-          <option>7万円以上</option>
-          <option>8万円以上</option>
-          <option>10万円以上</option>
-          <option>15万円以上</option>
-          <option>20万円以上</option>
-          <option>30万円以上</option>
-          <option>35万円以上</option>
+        <label for="collect_condition">回収条件</label>
+        <select name="collect_condition" class="form-control" id="collect_condition">
+          <option value="0">全額</option>
+          <option value="7">7万円以上</option>
+          <option value="8">8万円以上</option>
+          <option value="10">10万円以上</option>
+          <option value="15">15万円以上</option>
+          <option value="20">20万円以上</option>
+          <option value="30">30万円以上</option>
+          <option value="35">35万円以上</option>
         </select>
       </div>
       </div>
 
       <div class="col-md-2">
         <div class="form-group">
-          <label for="kaisyuhouhou">回収方法</label>
-          <select class="form-control" id="kaisyuhouhou">
-            <option onclick="changeDisabled();">現金</option>
-            <option onclick="changeAbled();">手形</option>
-            <option onclick="changeAbled();">ﾌｧｸﾀﾘﾝｸﾞ</option>
+          <label for="collect_way">回収方法</label>
+          <select name="collect_way" class="form-control" id="collect_way">
+            <option value="0" onclick="changeDisabled();">現金</option>
+            <option value="1" onclick="changeAbled();">手形</option>
+            <option value="2" onclick="changeAbled();">ﾌｧｸﾀﾘﾝｸﾞ</option>
           </select>
         </div>
       </div>
@@ -226,8 +226,8 @@ customer_newのページ
 
       <div class="col-md-2">
       <div class="form-group">
-          <label for="nissuu">手形(ﾌｧｸﾀﾘﾝｸﾞ)日数</label>
-          <input type="text" id="txt1" name="nissuu" class="form-control" placeholder="120" disabled>
+          <label for="pay_term">手形(ﾌｧｸﾀﾘﾝｸﾞ)日数</label>
+          <input type="text" id="txt1" name="pay_term" class="form-control" placeholder="120" disabled>
       </div>
       </div>
     </div>
@@ -235,7 +235,7 @@ customer_newのページ
 
     <div class="form-group">
       <label>備考欄</label>
-      <input type="text" name="bikou" class="form-control" placeholder="特記事項があれば、記載してください。">
+      <input type="text" name="remarks" class="form-control" placeholder="特記事項があれば、記載してください。">
     </div>
 
 
@@ -258,26 +258,26 @@ customer_newのページ
                   <div class="form-group">
                     <div class="col-md-3">
                     <label>本社郵便番号(ﾊｲﾌﾝなし)</label>
-                    <input type="text" name="zip11" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','addr12','addr12');" placeholder="1030023">
+                    <input type="text" name="h_zip" size="10" class="form-control" onKeyUp="AjaxZip3.zip2addr(this,'','h_adress1','h_adress1');" placeholder="1030023">
                     </div>
                   </div>
                 </div>
               <br>
               <div class="form-group">
                 <label>本社住所</label>
-                <input type="text" name="addr12" class="form-control" placeholder="東京都中央区日本橋本町">
-                <input type="text" name="addr12" class="form-control" placeholder="番地(3丁目6-2)">
-                <input type="text" name="addr12" class="form-control" placeholder="建物名など(小津ビルディング)">
+                <input type="text" name="h_adress1" class="form-control" placeholder="東京都中央区日本橋本町">
+                <input type="text" name="h_adress2" class="form-control" placeholder="番地(3丁目6-2)">
+                <input type="text" name="h_adress3" class="form-control" placeholder="建物名など(小津ビルディング)">
               </div>
                 <div class="row">
                   <div class="form-group">
                     <span class="col-md-6">
                       <label>本社電話番号</label>
-                      <input type="text" name="tel" class="form-control" placeholder="03-3639-5311">
+                      <input type="text" name="h_tel" class="form-control" placeholder="03-3639-5311">
                     </span>
                     <span class="col-md-6">
                       <label>本社FAX</label>
-                      <input type="text" name="fax" class="form-control" placeholder="03-3639-5360">
+                      <input type="text" name="h_fax" class="form-control" placeholder="03-3639-5360">
                     </span>
                   </div>
                 </div>
@@ -290,5 +290,7 @@ customer_newのページ
     </div>
 
 
-<button type="button" class="btn-primary btn-lg" onclick="submit();" >送信</button>
+<button type="button" class="btn-primary btn-block" onclick="submit();" >送信</button>
+<br>
+<br>
 <% end %>

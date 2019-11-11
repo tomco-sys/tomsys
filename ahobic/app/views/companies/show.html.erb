@@ -1,16 +1,177 @@
-shows view
+
+<div class="text-right">
+<%= link_to "ホームへ", root_path, class: 'get' %>
+</div>
+
 <div>
 <input class="btn btn-outline-primary" type="button" value="印刷する" onclick="window.print();" />
 </div>
 
-<h3>得意先マスタ新規登録申請書</h3>
+<h3 class="text-center">得意先マスタ新規登録申請書</h3>
 
-得意先正式名：
-<div>
-<%= @companys.company_name %>
-</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
 
-得意先ｶﾅ名：
-<div>
-<%= @companys.company_kana %>
-</div>
+  <tbody>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">承認</th>
+      <td class="col-md-1">
+        <% if @companys.approval == 0 then %>
+        <%= "事前" %>
+        <% else %>
+        <%= "事後" %>
+        <% end %>
+      </td>
+
+      <th class="col-md-1 text-center" scope="row">登録状況</th>
+      <td class="col-md-1">
+        <% if @companys.status == 0 then %>
+        <%= "新規" %>
+        <% else %>
+        <%= "他部門登録あり" %>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">国内外</th>
+      <td class="col-md-1">
+        <% if @companys.dometic == 0 then %>
+        <%= "国内" %>
+        <% else %>
+        <%= "国外" %>
+        <% end %>
+      </td>
+
+      <th class="col-md-1 text-center" scope="row">他部門番号</th>
+      <td class="col-md-1">
+        <% if @companys.registnum == nil then %>
+        <%= "--------" %>
+        <% else %>
+        <%= @comapnys.registnum %>
+        <% end %>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">得意先正式名</th>
+      <td class="col-md-4" colspan="3"><%= @companys.company_name %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">得意先略名</th>
+      <td class="col-md-4"><%= @companys.abb_name %></td>
+      <th class="col-md-1 text-center" scope="row">得意先ｶﾅ名</th>
+      <td class="col-md-4"><%= @companys.company_kana %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">郵便番号</th>
+      <td class="col-md-4" colspan="3"><%= @companys.zip12 %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所1</th>
+      <td class="col-md-4" colspan="3"><%= @companys.address1 %></td>
+    </tr>
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所2</th>
+      <td class="col-md-4" colspan="3"><%= @companys.address2 %></td>
+    </tr>
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所3</th>
+      <td class="col-md-4" colspan="3"><%= @companys.address3 %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">電話番号</th>
+      <td class="col-md-4"><%= @companys.tel1 %></td>
+      <th class="col-md-1 text-center" scope="row">FAX番号</th>
+      <td class="col-md-4"><%= @companys.fax1 %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">担当部署</th>
+      <td class="col-md-4"><%= @companys.c_department %></td>
+      <th class="col-md-1 text-center" scope="row">担当役職</th>
+      <td class="col-md-4"><%= @companys.c_position %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">担当者</th>
+      <td class="col-md-4"><%= @companys.person_in_c %></td>
+      <th class="col-md-1 text-center" scope="row">メール</th>
+      <td class="col-md-4"><%= @companys.c_mail %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">締日</th>
+      <td class="col-md-1"><%= @companys.period_day %></td>
+      <th class="col-md-1 text-center" scope="row">回収月</th>
+      <td class="col-md-1"><%= @companys.collect_month %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">回収日</th>
+      <td class="col-md-1"><%= @companys.collect_day %></td>
+      <th class="col-md-1 text-center" scope="row">回収条件</th>
+      <td class="col-md-1"><%= @companys.collect_condition %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">回収方法</th>
+      <td class="col-md-1"><%= @companys.collect_way %></td>
+      <th class="col-md-1 text-center" scope="row">日数</th>
+      <td class="col-md-1">
+        <% if @companys.pay_term == nil then %>
+        <%= "-----------" %>
+        <% else %>
+        <%= @companys.pay_term %>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">備考欄</th>
+      <td class="col-md-1" colspan="3"><%= @companys.remarks %></td>
+    </tr>
+
+    <tr>
+      <td class="col-md-1 text-center" colspan="4">--------下記、本社情報--------</td>
+    </tr>
+
+
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">本社郵便番号</th>
+      <td class="col-md-4" colspan="3"><%= @companys.h_zip %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所1</th>
+      <td class="col-md-4" colspan="3"><%= @companys.h_adress1 %></td>
+    </tr>
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所2</th>
+      <td class="col-md-4" colspan="3"><%= @companys.h_adress2 %></td>
+    </tr>
+    <tr>
+      <th class="col-md-1 text-center" scope="row">住所3</th>
+      <td class="col-md-4" colspan="3"><%= @companys.h_adress3 %></td>
+    </tr>
+
+    <tr>
+      <th class="col-md-1 text-center" scope="row">電話番号</th>
+      <td class="col-md-4"><%= @companys.h_tel %></td>
+      <th class="col-md-1 text-center" scope="row">FAX番号</th>
+      <td class="col-md-4"><%= @companys.h_fax %></td>
+    </tr>
+
+
+  </tbody>
+</table>
